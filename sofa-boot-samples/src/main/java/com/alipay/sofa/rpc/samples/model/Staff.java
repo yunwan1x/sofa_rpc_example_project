@@ -47,12 +47,15 @@ public class Staff {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         Staff staff = (Staff) o;
 
-        if (!name.equals(staff.name)) return false;
+        if (!name.equals(staff.name))
+            return false;
         return uuid.equals(staff.uuid);
     }
 
@@ -66,9 +69,9 @@ public class Staff {
     @Override
     public String toString() {
         return "Staff{" +
-                "name='" + name + '\'' +
-                ", communication=" + communication +
-                ", uuid='" + uuid + '\'' +
-                '}';
+            "name='" + name + '\'' +
+            ", communication=" + communication +
+            ", uuid='" + uuid + '\'' +
+            '}';
     }
 }

@@ -44,16 +44,16 @@ public class SofaRpcTest {
 
     @Test
     public void testGetStaff() {
-        Staff firstStaff=serverService.getFirstStaff();
-        String uuid=firstStaff.getUuid();
-        String address=firstStaff.getCommunication().getAddress();
-        Assert.assertEquals(firstStaff.getCommunication().getName(),"tom");
-        Assert.assertEquals(firstStaff.getCommunication().getUuid(),uuid+"_remote");
+        Staff firstStaff = serverService.getFirstStaff();
+        String uuid = firstStaff.getUuid();
+        String address = firstStaff.getCommunication().getAddress();
+        Assert.assertEquals(firstStaff.getCommunication().getName(), "tom");
+        Assert.assertEquals(firstStaff.getCommunication().getUuid(), uuid + "_remote");
         serverService.modifyStaff(firstStaff);
-        Assert.assertEquals(firstStaff.getCommunication().getAddress(),address);
-        Assert.assertEquals(serverService.getStatics().getFirstStaff(),firstStaff);
-        Assert.assertEquals(serverService.getStatics().getStaffNumber(),1);
-        Staff modifyStaff=serverService.modifyStaff(firstStaff);
-        Assert.assertNotEquals(modifyStaff,firstStaff);
+        Assert.assertEquals(firstStaff.getCommunication().getAddress(), address);
+        Assert.assertEquals(serverService.getStatics().getFirstStaff(), firstStaff);
+        Assert.assertEquals(serverService.getStatics().getStaffNumber(), 1);
+        Staff modifyStaff = serverService.modifyStaff(firstStaff);
+        Assert.assertNotEquals(modifyStaff, firstStaff);
     }
 }

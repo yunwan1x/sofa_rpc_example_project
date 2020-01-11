@@ -21,7 +21,6 @@ import com.alipay.sofa.rpc.samples.model.Statics;
 
 public interface ServerService {
 
-
     Staff getFirstStaff();
 
     Staff modifyStaff(Staff staff);

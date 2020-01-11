@@ -56,14 +56,19 @@ public class Communication {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         Communication that = (Communication) o;
 
-        if (!name.equals(that.name)) return false;
-        if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (phoneNumber != null ? !phoneNumber.equals(that.phoneNumber) : that.phoneNumber != null) return false;
+        if (!name.equals(that.name))
+            return false;
+        if (address != null ? !address.equals(that.address) : that.address != null)
+            return false;
+        if (phoneNumber != null ? !phoneNumber.equals(that.phoneNumber) : that.phoneNumber != null)
+            return false;
         return uuid.equals(that.uuid);
     }
 
@@ -79,10 +84,10 @@ public class Communication {
     @Override
     public String toString() {
         return "Communication{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", uuid='" + uuid + '\'' +
-                '}';
+            "name='" + name + '\'' +
+            ", address='" + address + '\'' +
+            ", phoneNumber='" + phoneNumber + '\'' +
+            ", uuid='" + uuid + '\'' +
+            '}';
     }
 }

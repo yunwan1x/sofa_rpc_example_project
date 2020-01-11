@@ -30,47 +30,46 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServerServiceImpl implements ServerService {
 
-    Statics statics=Statics.createStatic();
-
+    Statics          statics = Statics.createStatic();
 
     @SofaReference(interfaceType = ThirdPartService.class, jvmFirst = false, binding = @SofaReferenceBinding(bindingType = "bolt", timeout = 10000))
     ThirdPartService thirdPartService;
 
-    public Staff getFirstStaff(){
-        Staff staff=new Staff();
+    public Staff getFirstStaff() {
+        Staff staff = new Staff();
         staff.setUuid("20881234567890");
         staff.setName("tom");
-        staff.setCommunication(thirdPartService.getCommunication("tom","20881234567890"));
-        statics.setStaffNumber(statics.getStaffNumber()+1);
+        staff.setCommunication(thirdPartService.getCommunication("tom", "20881234567890"));
+        statics.setStaffNumber(statics.getStaffNumber() + 1);
         statics.setFirstStaff(staff);
         CaculateSumilator.sleepSeconds(2);
         return staff;
     }
 
-    public Staff modifyStaff(Staff staff){
+    public Staff modifyStaff(Staff staff) {
         CaculateSumilator.sleepSeconds(2);
-        staff.setName("modify_"+staff.getName());
+        staff.setName("modify_" + staff.getName());
         thirdPartService.modifyCommunication(staff.getCommunication());
         return staff;
     }
 
-    public Staff addStaff(){
+    public Staff addStaff() {
         CaculateSumilator.sleepSeconds(2);
-        Staff staff=new Staff();
+        Staff staff = new Staff();
         staff.setUuid("20881234567890");
         staff.setName("tom");
-        Communication communication=new Communication();
+        Communication communication = new Communication();
         communication.setAddress("beijing hujialou street");
         communication.setPhoneNumber("18109871234");
         communication.setName("tom");
         communication.setUuid("20881234567890");
         staff.setCommunication(communication);
-        statics.setStaffNumber(statics.getStaffNumber()+1);
+        statics.setStaffNumber(statics.getStaffNumber() + 1);
         statics.setFirstStaff(staff);
         return staff;
     }
 
-    public Statics getStatics(){
+    public Statics getStatics() {
         CaculateSumilator.sleepSeconds(2);
         return statics;
     }
