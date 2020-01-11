@@ -14,15 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alipay.sofa.rpc.samples.threadpool;
+package com.alipay.sofa.rpc.samples;
 
-/**
- *
- * @author <a href="mailto:lw111072@antfin.com">LiWei</a>
- */
-public class ThreadPoolServiceImpl implements ThreadPoolService {
-    @Override
-    public String sayThreadPool(String string) {
-        return string + "[" + Thread.currentThread().getName() + "]";
-    }
+import com.alipay.sofa.rpc.samples.model.Staff;
+import com.alipay.sofa.rpc.samples.model.Statics;
+
+public interface ServerService {
+
+
+    Staff getFirstStaff();
+
+    Staff modifyStaff(Staff staff);
+
+    int getFib(int n);
+
+    Statics getStatics();
 }

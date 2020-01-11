@@ -14,36 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alipay.sofa.rpc.samples.annotation;
+package com.alipay.sofa.rpc.samples;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-/**
- * @author <a href="mailto:leizhiyuan@gmail.com">leizhiyuan</a>
- */
 @SpringBootApplication
-public class AnotationClientApplication {
+public class ServerApplication {
 
     public static void main(String[] args) {
 
-        //change port to run in local machine
-        System.setProperty("server.port", "8081");
-
-        SpringApplication springApplication = new SpringApplication(AnotationClientApplication.class);
-
+        SpringApplication springApplication = new SpringApplication(ServerApplication.class);
         ApplicationContext applicationContext = springApplication.run(args);
-
-        AnnotationClientImpl annotationService = applicationContext.getBean(AnnotationClientImpl.class);
-
-        String result = annotationService.sayClientAnnotation("annotation");
-        System.out.println("invoke result:" + result);
-
-        if ("annotation".equalsIgnoreCase(result)) {
-            System.out.println("annotation invoke success");
-        } else {
-            System.out.println("annotation invoke fail");
-        }
     }
 }
