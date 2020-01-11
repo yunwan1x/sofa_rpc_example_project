@@ -71,6 +71,7 @@ public class ServerServiceImpl implements ServerService {
     }
 
     public Statics getStatics(){
+        CaculateSumilator.sleepSeconds(2);
         return statics;
     }
 
