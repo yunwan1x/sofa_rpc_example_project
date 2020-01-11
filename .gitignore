@@ -1,0 +1,17 @@
+# Maven (examples)
+target
+dependency-reduced-pom.xml
+
+# IntelliJ IDEA
+.idea
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings
+bin
+logs
+
+# OS X
+.DS_Store
