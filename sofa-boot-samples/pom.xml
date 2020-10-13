@@ -16,7 +16,7 @@
         <sofaboot.version>2.6.3</sofaboot.version>
         <rpc.starter.version>5.5.3</rpc.starter.version>
         <curator-test.version>2.9.1</curator-test.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <spring-boot-starter-test.version>1.4.2.RELEASE</spring-boot-starter-test.version>
         <zkclient.version>0.10</zkclient.version>
     </properties>
